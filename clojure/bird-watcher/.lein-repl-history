@@ -1,0 +1,5 @@
+(bird-watcher/day-without-birds? [5 5 4 1 7 6 7])
+(require 'bird-watcher.core)
+(require 'bird-watcher)
+(bird-watcher/day-without-birds? [5 5 4 1 7 6 7])
+(bird-watcher/day-without-birds? [5 5 4 1 7 0 7])

@@ -1,0 +1,9 @@
+name = "hello_world"
+version = "0.1.0"
+description = "A Hello World program, for Exercism"
+
+[dependencies]
+gleam_stdlib = "~> 0.26"
+
+[dev-dependencies]
+gleeunit = "~> 0.10"

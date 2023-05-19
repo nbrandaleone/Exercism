@@ -1,0 +1,3 @@
+(first-language '("Haskell" "Python"))
+(doc-find "assoc")
+(find-doc "assoc")
