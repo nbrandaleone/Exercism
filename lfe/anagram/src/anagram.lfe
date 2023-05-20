@@ -42,12 +42,22 @@
 (defun perms 
   ([()] '())
   ([(cons head tail)] 
-    (cons (lists:map #'id/1 `(,head ,tail)) 
-          (perms tail)))) 
-(defun my-list (l) 
-        (id l)) 
+    (let* ([h (lists:map #'id/1 (cons head tail))] 
+;    (let* ([h (lists:map #'my-list/1 (cons head tail))] 
+           [t (perms (disj (cons head tail) head))])
+           (cons h t))))
+
 (defun id (x) x)
-(defun id2 (x y) x y)
+(defun my-list (x) (list x))
+(defun disj (list key)
+  "Returns a new LIST with the KEY removed"
+  (-- list (list key))) ; list is both a function name and variable name (Lisp-2)
+
+(defun my-lc ()
+  (lc
+    ([<- x '(0 1 2 3)])
+      (trunc
+        (: math pow 3 x))))
 
 (defun reverse (list)
   (reverse list '()))
